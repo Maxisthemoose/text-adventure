@@ -28,8 +28,8 @@ export default class RandomWalk {
               tmpstr += "🟩";
             } else {
               tmpstr += "🟥";
-              console.log(map[i][j]);
             }
+            console.log(map[i][j]);
           } else tmpstr += "🟫";
         }
       }

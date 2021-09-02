@@ -22,8 +22,16 @@ export default class Node {
       const numEnemies = Math.floor(Math.random() * 2) + 1;
       for (let i = 0; i < numEnemies; i++)
         this.enemies.push(
-          enemy_list[Math.floor(Math.random() * enemy_list.length)],
+          enemy_list[this.random(enemy_list.length, 0)],
         );
     }
+
+    this.items.push(items_list[this.random(items_list.length, 0)]);
+    this.objects.push(objects[this.random(objects.length, 0)]);
+
+  }
+
+  private random(max: number, min: number) {
+    return Math.floor(Math.random() * max) + min;
   }
 }
