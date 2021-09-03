@@ -12,6 +12,7 @@ export default class Node {
   public items: Item[] = [];
   public description: string = "";
   public enterText: string = "";
+  public explored: boolean = false;
 
   constructor(public difficulty: 0 | 1) {
     this.init();

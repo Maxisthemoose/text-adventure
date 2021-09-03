@@ -1,6 +1,7 @@
 {
   "devDependencies": {
-    "@types/node": "^14.14.22"
+    "@types/node": "^14.14.22",
+    "@types/prompts": "^2.0.14"
   },
   "name": "text-adventure",
   "version": "1.0.0",
@@ -11,5 +12,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "prompts": "^2.4.1"
+  }
 }

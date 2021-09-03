@@ -1,11 +1,10 @@
 import RandomWalk from "./classes/RandomWalk";
 import AdventureGame from "./classes/Adventure";
-const rw = new RandomWalk(30, 30, 10, 100);
+const rw = new RandomWalk(30, 30, 10, 150);
 
 const [map, pos] = rw.create();
-
-console.log(rw.debug(map, pos));
-
 const game = new AdventureGame(map, pos);
+rw.debug(map, pos);
+// const game = new AdventureGame(...rw.create());
 
 game.start_game();

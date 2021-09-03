@@ -1,4 +1,6 @@
 import Node from "./Node";
+import { Node_ } from "../utils/interfaces/Node_";
+
 const dif = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1];
 export default class RandomWalk {
   private dirrections = [
@@ -15,7 +17,7 @@ export default class RandomWalk {
     private tunnels: number,
   ) {}
 
-  public debug(map: (0 | Node)[][], location: [number, number]): string {
+  public debug(map: Node_, location: [number, number]): string {
     let str = "";
     for (let i = 0; i < map.length; i++) {
       let tmpstr = "";
@@ -29,7 +31,7 @@ export default class RandomWalk {
             } else {
               tmpstr += "🟥";
             }
-            console.log(map[i][j]);
+            // console.log(map[i][j]);
           } else tmpstr += "🟫";
         }
       }
@@ -37,14 +39,20 @@ export default class RandomWalk {
       str += tmpstr;
     }
 
+    console.log(str);
+
     return str;
   }
 
-  public create(): [(0 | Node)[][], [number, number]] {
+  public debug_explored(map: Node_) {
+
+  }
+
+  public create(): [Node_, [number, number]] {
     return this.changeMap(this.generateMap());
   }
 
-  private generateMap(): (0 | Node)[][] {
+  private generateMap(): Node_ {
     let arr: 1[][] = [];
     for (let i = 0; i < this.w; i++) {
       arr.push([]);
@@ -64,8 +72,8 @@ export default class RandomWalk {
   }
 
   private changeMap(
-    startMap: (0 | Node)[][],
-  ): [(0 | Node)[][], [number, number]] {
+    startMap: Node_,
+  ): [Node_, [number, number]] {
     let pos = this.randomStart();
     const initPos = pos;
     let lastMove = [0, 0];
