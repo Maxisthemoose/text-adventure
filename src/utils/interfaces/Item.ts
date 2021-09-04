@@ -1,4 +1,5 @@
 export default interface Item {
-  damage: number;
   name: string;
+  attribute: "TBD";
+  description: string;
 }

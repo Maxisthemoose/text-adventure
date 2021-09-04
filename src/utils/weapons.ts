@@ -1,4 +1,4 @@
-import Item from "./interfaces/Item";
+import Weapon from "./interfaces/Weapon";
 
 export default [
   {
@@ -16,5 +16,5 @@ export default [
   {
     name: "Adamantium Sword",
     damage: 4,
-  }
-] as Item[];
+  },
+] as Weapon[];
