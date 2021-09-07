@@ -43,6 +43,12 @@ export const main_prompt: (
   };
 };
 
+export const seed: PromptObject = {
+  name: "seed",
+  type: "text",
+  message: "What seed would you like to use?",
+};
+
 const ProperCase = (str: string) => {
   return str[0].toUpperCase() + str.slice(1, str.length).toLowerCase();
 };
