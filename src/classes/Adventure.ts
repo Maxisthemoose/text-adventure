@@ -1,7 +1,7 @@
 import Node from "./Node";
 import { Node_ } from "../utils/interfaces/Node_";
 import Prompter from "../utils/Prompter/Prompter";
-import Player from "../utils/interfaces/Player";
+import Player from "./Player";
 
 export default class AdventureGame {
   private current_position: [number, number];
@@ -13,13 +13,7 @@ export default class AdventureGame {
   ];
   // private alive: boolean = true;
 
-  private player: Player = {
-    alive: true,
-    currentHP: 100,
-    items: [],
-    maxHP: 100,
-    weapons: [],
-  };
+  private player = new Player();
 
   constructor(private map: Node_, start_pos: [number, number]) {
     this.current_position = start_pos;
@@ -128,6 +122,17 @@ You find yourself stumbling down into a room, unsure how you ended up there, you
         );
       }
     } else console.log("You didn't find any weapons!");
+
+    if (curr_node.items.length > 0) {
+      for (const item of curr_node.items) {
+        this.player.items.push(item);
+        console.log(`You found a ${item.name}! It has the "${item.attribute}" attribute!`);
+        curr_node.items.splice(
+          curr_node.items.findIndex(v => v.name === item.name),
+          1
+        );
+      }
+    } else console.log("You didn't find any items!");
   }
 
   private view_map_as_player() {
